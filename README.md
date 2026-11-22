@@ -1,33 +1,37 @@
 # Sistem Informasi Akuntansi Kedai Sayur 24
 
-Repositori kerja bersama untuk merancang dan membangun sistem informasi akuntansi berbasis web bagi Kedai Sayur 24. Sistem baru direncanakan menggantikan IPOS setelah proses cutover disepakati dan data yang dibutuhkan siap.
+Repositori bersama Aurellia dan Syafa untuk merancang dan membangun sistem informasi akuntansi berbasis web. Sistem baru ditujukan untuk menggantikan IPOS setelah proses cutover dan kesiapan data disepakati.
 
-## Status
+## Keputusan yang sudah diberikan
 
-Repositori ini adalah kerangka awal untuk kolaborasi dan dokumentasi keputusan. Fitur aplikasi belum mulai diimplementasikan karena beberapa aturan operasional dan pilihan teknologi masih perlu dikonfirmasi.
+- Platform: website.
+- Bahasa: Python.
+- Database: SQLite.
+- Tools yang direncanakan: Anaconda dan Google Colab.
+- Pemodelan: UML.
+- Jumlah karyawan: 30 orang.
+- Sistem baru akan menggantikan IPOS sebagai sistem operasional setelah go-live.
 
-## Pembagian awal
+Framework Python, aturan shift, metode persediaan, dan rincian migrasi masih perlu dikunci. Lihat [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md).
 
-- **Aurellia:** absensi karyawan dan kas/laporan per shift.
-- **Syafa:** persediaan, penjualan/POS baru (menggantikan alur IPOS), serta laporan periode/bulanan.
-- **Bersama:** aturan bisnis, integrasi, rancangan UML, review, dan penerimaan sistem.
+## Pembagian awal tim
 
-Jumlah karyawan yang direncanakan: **30 orang**.
+- **Aurellia:** data karyawan, absensi, kas dan laporan per shift.
+- **Syafa:** persediaan, penjualan/POS baru, dan laporan periode/bulanan.
+- **Bersama:** kebutuhan lintas modul, UML, integrasi, akuntansi, review, dan persiapan cutover.
 
-## Usulan teknis yang menunggu persetujuan
+## Status saat ini
 
-- Website dengan Python; Django diusulkan sebagai kerangka kerja.
-- Database bersama. PostgreSQL diusulkan untuk penggunaan multi-pengguna; SQLite pernah disebut sebagai pilihan awal, sehingga keputusan final perlu disepakati sebelum membangun skema.
-- UML untuk pemodelan.
-- GitHub untuk repositori dan pull request; setiap orang mengembangkan di branch terpisah.
+Repo dan alur GitHub sudah disiapkan. Tahap yang sedang berjalan adalah menyepakati kebutuhan serta aturan bisnis sebelum membuat skema database dan fitur aplikasi.
 
-## Mulai bekerja
+## Dokumen kerja
 
-1. Baca [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md) dan tambahkan keputusan yang sudah disepakati.
-2. Tinjau [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) serta [`docs/WORKFLOW.md`](docs/WORKFLOW.md).
-3. Setujui pilihan stack dan aturan penting (shift, tanggal operasional, kas, migrasi/cutover IPOS).
-4. Setelah itu, buat rancangan UML dan skema data yang disepakati sebelum implementasi modul.
+- [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) — kebutuhan awal dan hal yang perlu dikonfirmasi.
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — tahapan pembangunan dan pembagian kerja.
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — modul dan alur data konseptual.
+- [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md) — keputusan terkonfirmasi dan terbuka.
+- [`docs/WORKFLOW.md`](docs/WORKFLOW.md) — branch, pull request, dan integrasi dua pengembang.
 
-## Keamanan dan data
+## Keamanan data
 
-Jangan commit kata sandi, token, file database produksi, salinan data karyawan/pelanggan, atau data transaksi nyata. Gunakan data contoh tanpa identitas pribadi. Simpan rahasia lokal di `.env` yang tidak di-commit.
+Jangan commit kata sandi, token, database produksi, ekspor IPOS, atau data pribadi karyawan/pelanggan. Gunakan data sintetis. Rahasia lokal disimpan dalam `.env` yang tidak di-commit.

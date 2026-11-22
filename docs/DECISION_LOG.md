@@ -1,31 +1,38 @@
 # Catatan Keputusan
 
-Dokumen ini memisahkan fakta yang sudah disampaikan dari pilihan yang masih perlu diputuskan. Perbarui status dan tanggal ketika ada kesepakatan.
+Dokumen ini memisahkan fakta yang sudah disampaikan dari pilihan yang masih perlu diputuskan. Perbarui setelah Aurellia dan Syafa sepakat.
 
 ## Sudah dikonfirmasi
 
 | Topik | Keputusan |
 |---|---|
-| Bentuk sistem | Aplikasi web baru untuk sistem informasi akuntansi toko sayur |
-| Karyawan | Sekitar 30 karyawan |
-| Sistem lama | Sistem baru direncanakan menggantikan IPOS sepenuhnya setelah cutover; IPOS tidak menjadi sistem operasional setelah itu |
+| Platform | Website |
+| Bahasa pemrograman | Python |
+| Database | SQLite |
+| Lingkungan/tools | Anaconda dan Google Colab |
+| Pemodelan sistem | UML |
+| Karyawan | Sekitar 30 orang |
+| Sistem lama | Sistem baru akan menggantikan IPOS sebagai sistem operasional setelah cutover; IPOS tidak digunakan lagi untuk transaksi operasional |
 | Tim | Aurellia dan Syafa membangun satu platform bersama |
-| Pemodelan | UML |
-| Pembagian awal | Aurellia: absensi dan kas/laporan per shift. Syafa: persediaan, POS/penjualan baru, laporan periode/bulanan. Integrasi dan validasi dilakukan bersama |
+| Pembagian awal | Aurellia: data karyawan, absensi, kas/laporan per shift. Syafa: persediaan, POS/penjualan baru, laporan periode/bulanan. Integrasi dan akuntansi lintas modul dikerjakan bersama |
 
-## Perlu disepakati sebelum implementasi terkait
+## Perlu disepakati
 
-- Framework Python dan versi yang digunakan.
-- Database final: SQLite atau PostgreSQL. Pilihan harus mempertimbangkan akses bersamaan, pencadangan, dan lingkungan produksi.
-- Aturan shift: jumlah/nama shift, pergantian hari, shift lintas tengah malam, shift tumpang tindih, dan penanggung jawab kas.
-- Tanggal operasional dan waktu tutup buku harian.
-- Proses tutup kas: uang awal, uang aktual, selisih, persetujuan, dan koreksi.
-- Sumber pencatatan biaya/pengeluaran dan siapa yang boleh mencatat/menyetujui.
+- Framework dan versi Python. Django adalah usulan, belum keputusan.
+- Jumlah dan jam shift, shift lintas tengah malam, pembagian kasir/laci kas, dan aturan tutup kas.
+- Tanggal operasional/tutup buku dan siapa yang menyetujui koreksi.
+- Detail absensi: toleransi, izin, lembur, dan mekanisme koreksi.
+- Produk, satuan dan konversi, susut/barang rusak, stok minimum, dan metode biaya persediaan.
+- Metode pembayaran, aturan diskon, pembatalan, dan retur.
+- Proses pembelian, pengeluaran operasional, invoice, utang pemasok, dan pembayaran.
+- Apakah penggajian termasuk ruang lingkup awal, formula, periode, tunjangan, dan potongan.
+- Daftar akun dan laporan akuntansi yang diminta, periode akuntansi, serta saldo awal.
 - Cabang/lokasi dan pembagian 30 karyawan per lokasi.
-- Peran pengguna dan hak akses (misalnya admin, manajer, kasir, petugas persediaan, keuangan).
-- Data historis IPOS yang perlu dibawa, format ekspor, saldo awal, masa arsip, rencana cutover, dan cara rekonsiliasi.
-- Ketentuan backup, hosting, dan siapa yang mengelola deployment.
+- Riwayat data IPOS yang dibawa/diarsipkan, format ekspor, cutover, dan rekonsiliasi saldo awal.
+- Backup/restore, perangkat pengguna, dan cara aplikasi dijalankan saat produksi.
 
-## Cara mencatat keputusan
+SQLite tetap menjadi database yang dipilih. Sebelum go-live, uji akses serentak, backup, dan pemulihan sesuai perangkat serta pola pemakaian toko.
 
-Tambahkan baris dengan format: `Tanggal | Topik | Keputusan | Alasan | Disetujui oleh`. Jangan menganggap isi dokumen referensi sebagai keputusan final sebelum dikonfirmasi oleh pemilik proses.
+## Format pencatatan
+
+`Tanggal | Topik | Keputusan | Alasan | Disetujui oleh`
