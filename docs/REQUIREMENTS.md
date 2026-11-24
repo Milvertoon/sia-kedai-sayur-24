@@ -61,7 +61,7 @@ Nama pengguna aplikasi boleh disesuaikan, tetapi pembatasan akses perlu mengikut
 - Syafa memiliki transaksi POS, pembayaran, persediaan, dan laporan periode sesuai cakupan penelitiannya.
 - Aurel menerima data penjualan/pembayaran yang diperlukan sebagai uang masuk laporan kas tanpa membuat ulang transaksi POS.
 - Sebelum kedua modul dikembangkan, sepakati struktur ID cabang, tanggal operasional, shift, kasir, pembayaran, pembatalan/retur, dan waktu transaksi.
-- Catat keputusan kontrak integrasi di docs/DECISION_LOG.md sebelum model data lintas modul dibuat.
+- Catat keputusan kontrak integrasi di [DECISION_LOG.md](DECISION_LOG.md) sebelum model data lintas modul dibuat.
 
 ## Kebutuhan nonfungsional
 

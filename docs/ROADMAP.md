@@ -14,7 +14,7 @@ Urutan ini mengikuti proposal penelitian terbaru dan pembagian dua orang untuk s
 
 **Bersama:** wawancara/konfirmasi alur cabang, shift, absensi, penutupan kas, laporan harian, pengguna, bukti selfie/lokasi, dan pergantian kasir.
 
-**Hasil:** kebutuhan fungsional/nonfungsional, kriteria penerimaan, serta jawaban pertanyaan terbuka di docs/REQUIREMENTS.md. Selesaikan dahulu konflik laporan shift tengah dan kas saat shift tumpang tindih.
+**Hasil:** kebutuhan fungsional/nonfungsional, kriteria penerimaan, serta jawaban pertanyaan terbuka di [REQUIREMENTS.md](REQUIREMENTS.md). Selesaikan dahulu konflik laporan shift tengah dan kas saat shift tumpang tindih.
 
 ## Tahap 2 — Model proses dan rancangan
 
@@ -60,4 +60,4 @@ Sistem menggantikan IPOS setelah kesiapan dan tanggal cutover disetujui. Jangan 
 2. Tetapkan satu penanggung jawab utama dan satu peninjau.
 3. Beri tahu rekan sebelum mengubah file/model yang dipakai bersama.
 4. Buat branch tugas, commit, buka pull request, tinjau, lalu gabungkan.
-5. Catat keputusan bisnis/data baru di docs/DECISION_LOG.md.
+5. Catat keputusan bisnis/data baru di [DECISION_LOG.md](DECISION_LOG.md).
