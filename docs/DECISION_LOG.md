@@ -1,6 +1,6 @@
 # Catatan Keputusan
 
-Dokumen ini memisahkan fakta yang sudah disampaikan dari pilihan yang masih perlu diputuskan. Perbarui setelah Aurellia dan Syafa sepakat.
+Dokumen ini memisahkan keputusan yang sudah diberikan dari pilihan awal prototipe dan aturan bisnis yang masih perlu disepakati.
 
 ## Sudah dikonfirmasi
 
@@ -16,9 +16,16 @@ Dokumen ini memisahkan fakta yang sudah disampaikan dari pilihan yang masih perl
 | Tim | Aurellia dan Syafa membangun satu platform bersama |
 | Pembagian awal | Aurellia: data karyawan, absensi, kas/laporan per shift. Syafa: persediaan, POS/penjualan baru, laporan periode/bulanan. Integrasi dan akuntansi lintas modul dikerjakan bersama |
 
+## Pilihan awal untuk prototipe
+
+| Topik | Pilihan kerja | Status |
+|---|---|---|
+| Framework | Django 6.1.3 | Dipakai untuk fondasi awal; tinjau bersama sebelum membuat fitur transaksi |
+| Versi Python | Python 3.12 | Versi dasar di environment Anaconda; dapat diubah jika komputer tim mensyaratkan versi lain |
+| Zona waktu | Asia/Jakarta | Default sementara; konfirmasi lokasi operasional toko |
+
 ## Perlu disepakati
 
-- Framework dan versi Python. Django adalah usulan, belum keputusan.
 - Jumlah dan jam shift, shift lintas tengah malam, pembagian kasir/laci kas, dan aturan tutup kas.
 - Tanggal operasional/tutup buku dan siapa yang menyetujui koreksi.
 - Detail absensi: toleransi, izin, lembur, dan mekanisme koreksi.

@@ -1,37 +1,35 @@
 # Sistem Informasi Akuntansi Kedai Sayur 24
 
-Repositori bersama Aurellia dan Syafa untuk merancang dan membangun sistem informasi akuntansi berbasis web. Sistem baru ditujukan untuk menggantikan IPOS setelah proses cutover dan kesiapan data disepakati.
+Repositori bersama untuk membangun sistem informasi akuntansi berbasis web bagi Kedai Sayur 24.
 
-## Keputusan yang sudah diberikan
+## Keputusan dari pemilik proyek
 
-- Platform: website.
-- Bahasa: Python.
-- Database: SQLite.
-- Tools yang direncanakan: Anaconda dan Google Colab.
-- Pemodelan: UML.
-- Jumlah karyawan: 30 orang.
-- Sistem baru akan menggantikan IPOS sebagai sistem operasional setelah go-live.
+- Website dengan Python dan database SQLite.
+- Anaconda dan Google Colab untuk lingkungan belajar/kerja.
+- UML untuk pemodelan sistem.
+- Sekitar 30 karyawan.
+- Sistem baru menggantikan IPOS setelah cutover.
 
-Framework Python, aturan shift, metode persediaan, dan rincian migrasi masih perlu dikunci. Lihat [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md).
+## Pembagian awal
 
-## Pembagian awal tim
+- Aurellia: data karyawan, absensi, kas dan laporan per shift.
+- Syafa: persediaan, POS/penjualan baru, dan laporan periode/bulanan.
+- Bersama: UML, aturan bisnis, integrasi antarmodul, serta akuntansi.
 
-- **Aurellia:** data karyawan, absensi, kas dan laporan per shift.
-- **Syafa:** persediaan, penjualan/POS baru, dan laporan periode/bulanan.
-- **Bersama:** kebutuhan lintas modul, UML, integrasi, akuntansi, review, dan persiapan cutover.
+## Status fondasi kode
 
-## Status saat ini
+Branch `feat/web-foundation` memuat prototipe awal Django 6.1.3 dan Python 3.12. Django adalah pilihan kerja sementara untuk memulai; Aurel dan Syafa perlu meninjaunya sebelum fitur transaksi dibuat.
 
-Repo dan alur GitHub sudah disiapkan. Tahap yang sedang berjalan adalah menyepakati kebutuhan serta aturan bisnis sebelum membuat skema database dan fitur aplikasi.
+Lihat `src/README.md` untuk cara menyiapkan environment dan menjalankan halaman awal.
 
-## Dokumen kerja
+## Dokumen proyek
 
-- [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) — kebutuhan awal dan hal yang perlu dikonfirmasi.
-- [`docs/ROADMAP.md`](docs/ROADMAP.md) — tahapan pembangunan dan pembagian kerja.
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — modul dan alur data konseptual.
-- [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md) — keputusan terkonfirmasi dan terbuka.
-- [`docs/WORKFLOW.md`](docs/WORKFLOW.md) — branch, pull request, dan integrasi dua pengembang.
+- `docs/REQUIREMENTS.md` — kebutuhan awal dan pertanyaan bisnis.
+- `docs/ROADMAP.md` — tahapan dan pembagian pekerjaan.
+- `docs/ARCHITECTURE.md` — modul dan alur data.
+- `docs/DECISION_LOG.md` — keputusan yang sudah pasti dan yang masih terbuka.
+- `docs/WORKFLOW.md` — cara kerja GitHub untuk dua pengembang.
 
-## Keamanan data
+## Keamanan
 
-Jangan commit kata sandi, token, database produksi, ekspor IPOS, atau data pribadi karyawan/pelanggan. Gunakan data sintetis. Rahasia lokal disimpan dalam `.env` yang tidak di-commit.
+Jangan mengunggah kata sandi, token, database operasional, file ekspor IPOS, atau data pribadi. Gunakan data contoh. Pengaturan untuk produksi belum dibuat.

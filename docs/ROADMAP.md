@@ -4,11 +4,10 @@ Urutan berikut menjaga integrasi dua orang pada satu produk dan mencegah modul y
 
 ## Tahap 0 — Repo dan cara kerja (selesai)
 
-- Repo privat `Milvertoon/sia-kedai-sayur-24` dibuat.
-- Branch awal `main`, commit pertama sudah terkirim.
-- `.gitignore`, aturan kolaborasi, dan pembagian awal tersedia.
+- Repo privat dan commit awal sudah ada di GitHub.
+- README, `.gitignore`, aturan kolaborasi, dan pembagian awal tersedia.
 
-## Tahap 1 — Konfirmasi kebutuhan
+## Tahap 1 — Konfirmasi kebutuhan (berjalan)
 
 **Bersama:** tinjau [`REQUIREMENTS.md`](REQUIREMENTS.md), jawab pertanyaan bisnis, tetapkan istilah dan kriteria penerimaan.
 
@@ -20,15 +19,13 @@ Urutan berikut menjaga integrasi dua orang pada satu produk dan mencegah modul y
 
 **Hasil:** rancangan ditinjau Aurellia dan Syafa sebelum database dibuat.
 
-## Tahap 3 — Pilihan framework dan fondasi teknis
+## Tahap 3 — Fondasi framework prototipe (dimulai)
 
-**Bersama:** pilih framework Python, versi Python, pola struktur aplikasi, cara migrasi skema SQLite, autentikasi/peran, backup, dan lingkungan lokal.
-
-**Usulan untuk dibahas:** Django cocok sebagai kandidat karena sistem membutuhkan login, hak akses, formulir, dan banyak modul; keputusan tetap pada tim.
+Branch `feat/web-foundation` memulai Django 6.1.3, Python 3.12, SQLite, halaman awal, dan environment Anaconda. Aurel dan Syafa perlu meninjau pilihan framework/versi sebelum modul bisnis dibangun.
 
 ## Tahap 4 — Fondasi aplikasi bersama
 
-**Bersama:** inisialisasi web app, konfigurasi environment, layout, login/logout, peran, audit dasar, data toko, dan data contoh sintetis.
+**Bersama:** konfigurasi environment, layout, login/logout, peran, audit dasar, data toko, dan data contoh sintetis.
 
 Perubahan model inti ditinjau kedua orang. Buat branch tugas terpisah lalu buka pull request.
 

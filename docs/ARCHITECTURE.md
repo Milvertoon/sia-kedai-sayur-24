@@ -24,14 +24,12 @@
 | `accounting` | Bersama | Daftar akun, jurnal, buku besar, neraca saldo, tutup periode |
 | `reports` | Syafa + Aurellia | Laporan penjualan, stok, kas/shift, absensi, penggajian, dan laporan keuangan |
 
-Nama aplikasi dan batas modul adalah konsep; struktur kode final ditetapkan setelah framework dipilih.
-
 ## Alur data tingkat tinggi
 
 Penjualan yang dibayar mengurangi stok dan mencatat penerimaan berdasarkan metode pembayaran. Pembelian yang diterima menambah stok dan dapat mencatat utang pemasok. Pengeluaran, penggajian, retur, setoran kas, dan koreksi stok memiliki transaksi sumber dan aturan persetujuan. Modul akuntansi memetakan transaksi tersebut ke jurnal sehingga laporan bisa ditelusuri kembali.
 
-## Catatan database dan lingkungan
+## Fondasi kode saat ini
+
+Branch `feat/web-foundation` berisi prototipe Django 6.1.3 dan Python 3.12 dengan satu halaman awal, konfigurasi SQLite, serta environment Anaconda. Belum ada model data atau alur transaksi. Framework ini adalah pilihan awal; tinjau bersama sebelum modul bisnis dibuat.
 
 SQLite adalah pilihan database yang sudah diberikan. Setiap pengembang sebaiknya memiliki database pengembangan sendiri; jangan sinkronkan file SQLite yang sedang aktif lewat Git/OneDrive. Siapkan backup berkala dan validasi transaksi saat penggunaan serentak sebelum go-live. Anaconda dapat mengelola environment Python lokal; Google Colab digunakan untuk eksperimen yang sesuai, bukan sebagai tempat penyimpanan database operasional.
-
-Framework web Python belum dipilih. Django merupakan kandidat, bukan keputusan final.
