@@ -31,6 +31,6 @@ Jika butuh mengubah model bersama, jangan membuat versi masing-masing. Buat usul
 
 - Masing-masing komputer punya instalasi Django dan database PostgreSQL pengembangan sendiri.
 - File .env berisi rahasia atau kata sandi lokal, jangan dikirim ke GitHub.
-- Jangan commit database, foto selfie, lokasi, data karyawan nyata, atau ekspor IPOS.
+- Jangan commit database, foto selfie, lokasi, data karyawan nyata, atau data transaksi.
 - Gunakan data sintetis untuk pengembangan dan dokumentasi.
 - Perubahan database bersama dibagikan melalui migration Django yang ditinjau di pull request.

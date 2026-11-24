@@ -50,9 +50,9 @@ Jika ada kesalahan kebutuhan atau rancangan, kembalikan temuan ke tahap terkait,
 
 ## Tahap 7 — Persiapan operasional dan cutover
 
-**Bersama pemilik/manajer:** inventarisasi data IPOS yang perlu diarsipkan atau dipindah, rekonsiliasi saldo awal, pelatihan, backup/restore, persiapan koneksi cabang, jadwal cutover, dan cara kembali ke proses aman jika penerapan gagal.
+**Bersama pemilik/manajer:** inventarisasi data operasional historis yang perlu diarsipkan atau dipindah bila diperlukan, rekonsiliasi saldo awal, pelatihan, backup/restore, persiapan koneksi cabang, jadwal penerapan, dan cara kembali ke proses aman jika penerapan gagal.
 
-Sistem menggantikan IPOS setelah kesiapan dan tanggal cutover disetujui. Jangan menjalankan dua sumber transaksi operasional tanpa prosedur rekonsiliasi.
+Terapkan sistem setelah kesiapan dan jadwalnya disetujui. Hindari pencatatan ganda tanpa prosedur rekonsiliasi.
 
 ## Cara membagi kerja tiap minggu
 

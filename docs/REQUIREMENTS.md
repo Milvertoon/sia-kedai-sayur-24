@@ -70,7 +70,7 @@ Nama pengguna aplikasi boleh disesuaikan, tetapi pembatasan akses perlu mengikut
 - Kamera dan geolokasi peramban memerlukan izin pengguna dan HTTPS saat dipakai. Data selfie dan lokasi perlu dibatasi aksesnya.
 - Perubahan penting memiliki identitas pengguna, waktu, alasan, dan rekam jejak.
 - Rahasia konfigurasi berada di file lokal .env yang tidak masuk Git.
-- Siapkan pencadangan, pemulihan, serta pelatihan sebelum sistem menggantikan IPOS.
+- Siapkan pencadangan, pemulihan, serta pelatihan sebelum sistem diterapkan.
 
 ## Hal yang harus diklarifikasi sebelum model data laporan kas dibuat
 
@@ -81,7 +81,7 @@ Nama pengguna aplikasi boleh disesuaikan, tetapi pembatasan akses perlu mengikut
 5. Apakah kasir yang menutup shift harus sama dengan kasir yang ditugaskan? Siapa yang menyetujui koreksi atau selisih?
 6. Bagaimana aturan toleransi keterlambatan, izin, sakit, lupa absen, selfie/lokasi gagal, dan koreksi absensi?
 7. Cabang mana yang dimaksud sebagai cabang pusat pada rencana pengujian rekonsiliasi kas?
-8. Apa data historis IPOS yang perlu diarsipkan atau dimigrasikan sebelum cutover?
+8. Data operasional historis apa yang perlu diarsipkan atau dimigrasikan sebelum sistem digunakan?
 
 ## Rencana evaluasi penelitian
 

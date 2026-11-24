@@ -12,7 +12,7 @@ Repositori untuk membangun satu aplikasi web bagi Kedai Sayur 24 Semarang. Ranca
 - Pemodelan: UML dan flowchart.
 - Pengguna: pemilik, manajer, kasir, dan karyawan.
 - Operasional: tiga cabang di Semarang, sekitar 30 karyawan, toko buka 24 jam, empat shift.
-- Sistem baru direncanakan menggantikan IPOS setelah data, proses, pelatihan, dan cutover siap.
+- Penerapan sistem dilakukan setelah alur kerja dan kesiapan operasional dikonfirmasi.
 
 Proposal final menggantikan pilihan kerja lama yang menyebut SQLite, Anaconda, dan Google Colab. Prototipe repo sudah menggunakan Django; konfigurasinya sedang diselaraskan ke PostgreSQL.
 
@@ -39,4 +39,4 @@ Branch lokal saat ini adalah feat/web-foundation. Isinya fondasi Django dan hala
 
 ## Data dan keamanan
 
-Gunakan data contoh sintetis. Jangan unggah kata sandi, token, database operasional, ekspor IPOS, foto selfie, lokasi, atau data pribadi karyawan. Jangan gunakan server pengembangan Django sebagai aplikasi toko.
+Gunakan data contoh sintetis. Jangan unggah kata sandi, token, database operasional, ekspor transaksi, foto selfie, lokasi, atau data pribadi karyawan. Jangan gunakan server pengembangan Django sebagai aplikasi toko.
