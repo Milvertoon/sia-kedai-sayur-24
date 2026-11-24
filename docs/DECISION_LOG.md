@@ -1,45 +1,53 @@
 # Catatan Keputusan
 
-Dokumen ini memisahkan keputusan yang sudah diberikan dari pilihan awal prototipe dan aturan bisnis yang masih perlu disepakati.
-
-## Sudah dikonfirmasi
+## Keputusan dari proposal final
 
 | Topik | Keputusan |
 |---|---|
-| Platform | Website |
-| Bahasa pemrograman | Python |
-| Database | SQLite |
-| Lingkungan/tools | Anaconda dan Google Colab |
-| Pemodelan sistem | UML |
-| Karyawan | Sekitar 30 orang |
-| Sistem lama | Sistem baru akan menggantikan IPOS sebagai sistem operasional setelah cutover; IPOS tidak digunakan lagi untuk transaksi operasional |
-| Tim | Aurellia dan Syafa membangun satu platform bersama |
-| Pembagian awal | Aurellia: data karyawan, absensi, kas/laporan per shift. Syafa: persediaan, POS/penjualan baru, laporan periode/bulanan. Integrasi dan akuntansi lintas modul dikerjakan bersama |
+| Judul penelitian Aurellia | Rancang Bangun Sistem Informasi Akuntansi Berbasis Web Subsistem Absensi Karyawan dan Laporan Keuangan Per Shift pada Kedai Sayur 24 Semarang. |
+| Platform | Website. |
+| Bahasa/framework | Python dan Django. |
+| Database | PostgreSQL. |
+| Antarmuka | HTML, CSS, JavaScript, Bootstrap, dan Django Templates. |
+| Lingkungan kerja | VS Code sebagai alat pengembangan lokal yang disebut proposal. |
+| Pemodelan | UML dan flowchart. |
+| Metode pengembangan | Waterfall dengan umpan balik dari evaluasi/pengujian ke kebutuhan/perancangan. |
+| Operasional | Tiga cabang Semarang: Sampangan, Fatmawati, Gunungpati; sekitar 30 karyawan; toko beroperasi 24 jam. |
+| Jadwal shift | Pagi 08.00–16.00, Tengah 12.00–20.00, Sore 16.00–00.00, Malam 00.00–08.00 WIB. |
+| Peran pengguna | Pemilik, manajer, kasir, dan karyawan. |
+| Cakupan Aurellia | Absensi dan laporan kas per shift. |
+| Cakupan Syafa | POS/penjualan, persediaan, dan laporan berkala/bulanan sesuai pembagian penelitian. |
+| Sistem lama | Sistem baru direncanakan menggantikan IPOS setelah migrasi/arsip, rekonsiliasi, pelatihan, dan cutover. |
+| Versi fondasi lokal | Repo memulai prototipe dengan Django 6.1.3 dan Python 3.12; versi ini pilihan implementasi fondasi, bukan ketentuan versi eksplisit proposal. |
 
-## Pilihan awal untuk prototipe
+Keputusan final ini menggantikan catatan kerja sebelumnya yang menetapkan SQLite, Anaconda, dan Google Colab. Sebelum produksi, pilih versi PostgreSQL yang cocok dengan versi Django. Dokumentasi Django 6.1 menyebut PostgreSQL 15+ dan Psycopg 3.1.12+.
 
-| Topik | Pilihan kerja | Status |
-|---|---|---|
-| Framework | Django 6.1.3 | Dipakai untuk fondasi awal; tinjau bersama sebelum membuat fitur transaksi |
-| Versi Python | Python 3.12 | Versi dasar di environment Anaconda; dapat diubah jika komputer tim mensyaratkan versi lain |
-| Zona waktu | Asia/Jakarta | Default sementara; konfirmasi lokasi operasional toko |
+## Keputusan proses tim
 
-## Perlu disepakati
+- Aurellia dan Syafa membangun satu platform dan berbagi standar data.
+- Setiap modul memiliki penanggung jawab utama; perubahan kontrak integrasi dan skema lintas modul harus dibahas bersama.
+- Aurel mengonsumsi ringkasan pembayaran POS untuk laporan kas, tidak menduplikasi detail transaksi POS.
+- Gunakan data contoh selama pengembangan; data nyata karyawan dan transaksi tidak masuk repo.
 
-- Jumlah dan jam shift, shift lintas tengah malam, pembagian kasir/laci kas, dan aturan tutup kas.
-- Tanggal operasional/tutup buku dan siapa yang menyetujui koreksi.
-- Detail absensi: toleransi, izin, lembur, dan mekanisme koreksi.
-- Produk, satuan dan konversi, susut/barang rusak, stok minimum, dan metode biaya persediaan.
-- Metode pembayaran, aturan diskon, pembatalan, dan retur.
-- Proses pembelian, pengeluaran operasional, invoice, utang pemasok, dan pembayaran.
-- Apakah penggajian termasuk ruang lingkup awal, formula, periode, tunjangan, dan potongan.
-- Daftar akun dan laporan akuntansi yang diminta, periode akuntansi, serta saldo awal.
-- Cabang/lokasi dan pembagian 30 karyawan per lokasi.
-- Riwayat data IPOS yang dibawa/diarsipkan, format ekspor, cutover, dan rekonsiliasi saldo awal.
-- Backup/restore, perangkat pengguna, dan cara aplikasi dijalankan saat produksi.
+## Terbuka untuk keputusan pemilik/manajer dan pembimbing
 
-SQLite tetap menjadi database yang dipilih. Sebelum go-live, uji akses serentak, backup, dan pemulihan sesuai perangkat serta pola pemakaian toko.
+- Status laporan kas untuk shift tengah: tidak ada laporan tersendiri menurut outline, tetapi proposal menyebut laporan per shift.
+- Pengelolaan laci kas pada jam shift yang tumpang tindih dan proses serah terima kas.
+- Tanggal operasional untuk shift malam yang melewati tengah malam.
+- Rumus laporan, klasifikasi uang masuk/keluar, saldo kas seharusnya, selisih, pembayaran tunai/non-tunai, dan setoran.
+- Toleransi keterlambatan, izin, pembuktian absensi, radius lokasi, masa simpan selfie/lokasi, serta pihak yang dapat melihatnya.
+- Cabang “pusat” untuk pembandingan laporan kas selama tiga hari.
+- Hosting, domain, backup, pemulihan, koneksi antar cabang, tanggal cutover IPOS dan data yang perlu dibawa.
+- Akun awal, aturan hak akses, dan penanggung jawab persetujuan koreksi.
 
-## Format pencatatan
+## Tindak lanjut komentar pembimbing pada outline
 
-`Tanggal | Topik | Keputusan | Alasan | Disetujui oleh`
+- Tegaskan batas penelitian Aurel dan Syafa pada rumusan, tujuan, diagram, antarmuka, metode, serta kontribusi; jangan menyatakan transaksi POS sebagai fitur penelitian Aurel.
+- Tampilkan subsistem absensi dan laporan kas per shift sebagai kontribusi Aurel; jelaskan antarmuka data ke modul POS Syafa.
+- Jelaskan alur umpan balik pengujian ke kebutuhan/perancangan pada Waterfall.
+- Pastikan kasir tetap dipertimbangkan sebagai responden/pengguna untuk skenario tutup kas meskipun POS menjadi cakupan Syafa.
+- Rapikan konsistensi tanggal proposal dengan tanggal wawancara/revisi dan lengkapi sitasi/daftar pustaka yang diminta pembimbing. Poin ini tindak lanjut naskah, bukan perubahan fitur aplikasi.
+
+## Format keputusan baru
+
+Tanggal | Topik | Keputusan | Alasan | Disetujui oleh

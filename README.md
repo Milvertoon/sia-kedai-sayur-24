@@ -1,35 +1,42 @@
 # Sistem Informasi Akuntansi Kedai Sayur 24
 
-Repositori bersama untuk membangun sistem informasi akuntansi berbasis web bagi Kedai Sayur 24.
+Repositori untuk membangun satu aplikasi web bagi Kedai Sayur 24 Semarang. Rancangan terbaru mengikuti proposal penelitian Aurellia: skripsinya berfokus pada subsistem absensi karyawan dan laporan kas per shift. Sistem keseluruhan juga akan terhubung dengan modul yang dikerjakan Syafa.
 
-## Keputusan dari pemilik proyek
+## Acuan rancangan terbaru
 
-- Website dengan Python dan database SQLite.
-- Anaconda dan Google Colab untuk lingkungan belajar/kerja.
-- UML untuk pemodelan sistem.
-- Sekitar 30 karyawan.
-- Sistem baru menggantikan IPOS setelah cutover.
+- Platform: website.
+- Bahasa: Python dengan Django.
+- Database: PostgreSQL.
+- Antarmuka: HTML, CSS, JavaScript, Bootstrap, dan Django Templates.
+- Perangkat kerja utama: VS Code.
+- Pemodelan: UML dan flowchart.
+- Pengguna: pemilik, manajer, kasir, dan karyawan.
+- Operasional: tiga cabang di Semarang, sekitar 30 karyawan, toko buka 24 jam, empat shift.
+- Sistem baru direncanakan menggantikan IPOS setelah data, proses, pelatihan, dan cutover siap.
 
-## Pembagian awal
+Proposal final menggantikan pilihan kerja lama yang menyebut SQLite, Anaconda, dan Google Colab. Prototipe repo sudah menggunakan Django; konfigurasinya sedang diselaraskan ke PostgreSQL.
 
-- Aurellia: data karyawan, absensi, kas dan laporan per shift.
-- Syafa: persediaan, POS/penjualan baru, dan laporan periode/bulanan.
-- Bersama: UML, aturan bisnis, integrasi antarmodul, serta akuntansi.
+## Pembagian kerja
 
-## Status fondasi kode
+- **Aurellia (Aurel):** data dan penempatan karyawan, absensi, serta laporan kas per shift. Modul laporan Aurel menerima data penjualan/pembayaran dari modul Syafa sesuai kontrak integrasi yang disepakati.
+- **Syafa:** persediaan, transaksi POS/penjualan, dan laporan keuangan per periode/bulanan sesuai pembagian penelitian.
+- **Bersama:** login dan hak akses, data cabang/shift, UML, aturan bisnis, kontrak integrasi, akuntansi bersama, peninjauan perubahan, dan integrasi sistem.
 
-Branch `feat/web-foundation` memuat prototipe awal Django 6.1.3 dan Python 3.12. Django adalah pilihan kerja sementara untuk memulai; Aurel dan Syafa perlu meninjaunya sebelum fitur transaksi dibuat.
+Pembagian ini menjelaskan kepemilikan kerja; produk tetap satu aplikasi dan satu repositori.
 
-Lihat `src/README.md` untuk cara menyiapkan environment dan menjalankan halaman awal.
+## Status repo
+
+Branch lokal saat ini adalah feat/web-foundation. Isinya fondasi Django dan halaman awal, belum berisi fitur operasional atau transaksi. Perubahan berdasarkan proposal final disiapkan di branch lokal ini agar dapat ditinjau sebelum dikirim ke GitHub.
 
 ## Dokumen proyek
 
-- `docs/REQUIREMENTS.md` — kebutuhan awal dan pertanyaan bisnis.
-- `docs/ROADMAP.md` — tahapan dan pembagian pekerjaan.
-- `docs/ARCHITECTURE.md` — modul dan alur data.
-- `docs/DECISION_LOG.md` — keputusan yang sudah pasti dan yang masih terbuka.
-- `docs/WORKFLOW.md` — cara kerja GitHub untuk dua pengembang.
+- docs/REQUIREMENTS.md — kebutuhan dan batas penelitian.
+- docs/ARCHITECTURE.md — modul serta aliran data.
+- docs/DECISION_LOG.md — keputusan final dan hal yang masih harus dipastikan.
+- docs/ROADMAP.md — urutan pengerjaan dan pembagian dua orang.
+- docs/WORKFLOW.md — cara kerja Git dan pull request.
+- src/README.md — cara menyiapkan dan menjalankan fondasi lokal.
 
-## Keamanan
+## Data dan keamanan
 
-Jangan mengunggah kata sandi, token, database operasional, file ekspor IPOS, atau data pribadi. Gunakan data contoh. Pengaturan untuk produksi belum dibuat.
+Gunakan data contoh sintetis. Jangan unggah kata sandi, token, database operasional, ekspor IPOS, foto selfie, lokasi, atau data pribadi karyawan. Jangan gunakan server pengembangan Django sebagai aplikasi toko.

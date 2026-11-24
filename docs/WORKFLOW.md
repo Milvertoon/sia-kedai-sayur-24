@@ -1,29 +1,36 @@
 # Alur Kerja Dua Pengembang
 
-## Struktur branch
+Aplikasi dikerjakan Aurellia dan Syafa bersama dalam satu repositori. Tiap orang mengerjakan modul yang menjadi tanggung jawabnya, lalu meninjau pekerjaan rekannya sebelum penggabungan.
 
-- `main`: versi yang disetujui dan stabil.
-- `develop`: integrasi pekerjaan yang sedang berjalan, bila tim memilih pola ini.
-- `feat/aurellia-<topik>`: pekerjaan Aurellia.
-- `feat/syafa-<topik>`: pekerjaan Syafa.
-- `docs/<topik>`: perubahan dokumentasi/UML.
+## Branch
 
-Mulai setiap tugas dari branch dasar terbaru. Hindari mengubah file yang sama tanpa koordinasi. Jika perubahan menyentuh model data bersama, tuliskan usulan terlebih dahulu lalu sepakati sebelum coding.
+- main: versi yang disetujui.
+- feat/aurellia-<topik>: absensi, data karyawan, laporan kas per shift.
+- feat/syafa-<topik>: POS/penjualan, persediaan, laporan periode.
+- docs/<topik>: UML, naskah rancangan, atau dokumentasi.
 
-## Siklus perubahan
+Gunakan branch dasar yang disepakati dan terbaru. Jika tim memilih branch develop sebagai tempat integrasi, tuliskan aturan tersebut sebelum dipakai. Jangan mengerjakan langsung di main.
 
-1. Buat issue/tugas dengan hasil yang diharapkan dan kriteria selesai.
-2. Buat branch untuk satu lingkup kerja.
-3. Kerjakan dan commit dengan pesan yang menjelaskan perubahan.
-4. Buka pull request ke branch integrasi; jelaskan perubahan, dampak data, cara memeriksa, dan risiko migrasi.
-5. Pengembang lain meninjau; perbaiki masukan.
-6. Gabungkan setelah lolos pemeriksaan yang disepakati.
-7. Integrasikan secara rutin ke lingkungan uji dengan data contoh.
+## Siklus tugas
 
-## Lingkungan pengembangan
+1. Tulis issue dengan tujuan, pemilik, dan kriteria selesai.
+2. Tentukan apakah perubahan menyentuh kontrak bersama seperti cabang, shift, pembayaran, atau kas.
+3. Buat branch khusus untuk satu lingkup perubahan.
+4. Commit perubahan kecil dengan pesan yang mudah dipahami.
+5. Buka pull request, jelaskan perubahan, file/model terdampak, dan cara rekan meninjau.
+6. Rekan meninjau dan mencatat masukan.
+7. Perbaiki dan gabungkan setelah kedua pihak memahami dampaknya.
 
-Masing-masing pengembang memakai lingkungan Python lokal dan basis data pengembangan terpisah. Jangan berbagi file SQLite yang sama lewat Git/OneDrive. Struktur environment dan cara menjalankannya akan didokumentasikan setelah stack final dipilih.
+## Pembagian modul dan benturan file
 
-## Data dan rahasia
+Aurellia terutama mengerjakan employee, attendance, dan shift_cash. Syafa terutama mengerjakan sales, inventory, dan laporan periode. Login, hak akses, cabang, shift, tanggal operasional, dan kontrak pembayaran merupakan bagian bersama.
 
-Gunakan data sintetis. Jangan commit `.env`, token, database berisi data nyata, file ekspor IPOS, atau data pribadi karyawan. Akses kolaborator GitHub diberikan langsung oleh pemilik repositori setelah akun Syafa diketahui dan disetujui.
+Jika butuh mengubah model bersama, jangan membuat versi masing-masing. Buat usulan di issue atau dokumen UML, sepakati nama/relasi/aturan, lalu satu orang mengerjakan perubahan fondasi dan orang kedua meninjau.
+
+## Lingkungan dan data
+
+- Masing-masing komputer punya instalasi Django dan database PostgreSQL pengembangan sendiri.
+- File .env berisi rahasia atau kata sandi lokal, jangan dikirim ke GitHub.
+- Jangan commit database, foto selfie, lokasi, data karyawan nyata, atau ekspor IPOS.
+- Gunakan data sintetis untuk pengembangan dan dokumentasi.
+- Perubahan database bersama dibagikan melalui migration Django yang ditinjau di pull request.

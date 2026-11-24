@@ -1,56 +1,63 @@
 # Roadmap Pembangunan
 
-Urutan berikut menjaga integrasi dua orang pada satu produk dan mencegah modul yang belum disepakati mengunci skema data terlalu dini.
+Urutan ini mengikuti proposal penelitian terbaru dan pembagian dua orang untuk satu aplikasi. Waterfall menjadi alur utama, dengan putaran umpan balik ketika uji coba menemukan masalah pada kebutuhan atau rancangan.
 
-## Tahap 0 — Repo dan cara kerja (selesai)
+## Tahap 0 — Acuan dan batas penelitian
 
-- Repo privat dan commit awal sudah ada di GitHub.
-- README, `.gitignore`, aturan kolaborasi, dan pembagian awal tersedia.
+**Aurellia:** pastikan cakupan naskahnya absensi dan laporan kas per shift.
+**Syafa:** pastikan pemilik modul POS, persediaan, dan laporan periode.
+**Bersama:** tandai keputusan yang perlu persetujuan pemilik/manajer dan samakan istilah.
 
-## Tahap 1 — Konfirmasi kebutuhan (berjalan)
+**Hasil:** pembagian kerja dan batas modul yang dipahami kedua orang.
 
-**Bersama:** tinjau [`REQUIREMENTS.md`](REQUIREMENTS.md), jawab pertanyaan bisnis, tetapkan istilah dan kriteria penerimaan.
+## Tahap 1 — Analisis kebutuhan dan aturan kas/absensi
 
-**Hasil:** daftar kebutuhan disetujui, aktor/hak akses, aturan shift, transaksi yang sah, dan batas cutover IPOS.
+**Bersama:** wawancara/konfirmasi alur cabang, shift, absensi, penutupan kas, laporan harian, pengguna, bukti selfie/lokasi, dan pergantian kasir.
 
-## Tahap 2 — Model UML dan rancangan data
+**Hasil:** kebutuhan fungsional/nonfungsional, kriteria penerimaan, serta jawaban pertanyaan terbuka di docs/REQUIREMENTS.md. Selesaikan dahulu konflik laporan shift tengah dan kas saat shift tumpang tindih.
 
-**Bersama:** buat use case, activity diagram untuk penjualan dan tutup shift, sequence diagram untuk alur transaksi penting, class/domain model, lalu ERD dan kamus data.
+## Tahap 2 — Model proses dan rancangan
 
-**Hasil:** rancangan ditinjau Aurellia dan Syafa sebelum database dibuat.
+**Bersama:** buat flowchart proses berjalan/usulan, UML use case, activity/sequence untuk absensi dan tutup kas, domain/class model, ERD, kamus data, rancangan antarmuka, dan kontrak integrasi POS-pembayaran.
 
-## Tahap 3 — Fondasi framework prototipe (dimulai)
+**Hasil:** rancangan disepakati Aurel, Syafa, serta ditinjau pembimbing/pemilik proses sebelum model data lintas modul dibuat.
 
-Branch `feat/web-foundation` memulai Django 6.1.3, Python 3.12, SQLite, halaman awal, dan environment Anaconda. Aurel dan Syafa perlu meninjau pilihan framework/versi sebelum modul bisnis dibangun.
+## Tahap 3 — Fondasi aplikasi
 
-## Tahap 4 — Fondasi aplikasi bersama
+**Bersama:** gunakan Django dan PostgreSQL sesuai proposal; rapikan environment lokal, konfigurasi rahasia, layout, autentikasi, hak akses, cabang, shift, dan data contoh sintetis.
 
-**Bersama:** konfigurasi environment, layout, login/logout, peran, audit dasar, data toko, dan data contoh sintetis.
+**Hasil:** aplikasi lokal dapat dijalankan kedua orang dengan konfigurasi yang konsisten. Jangan mulai dengan data nyata.
 
-Perubahan model inti ditinjau kedua orang. Buat branch tugas terpisah lalu buka pull request.
+## Tahap 4 — Pengerjaan modul secara terpisah
 
-## Tahap 5 — Modul operasional paralel
+- **Aurellia:** data/penempatan karyawan, absensi masuk-pulang, izin/status, riwayat, laporan kas shift.
+- **Syafa:** POS/penjualan, pembayaran, persediaan, serta laporan berkala sesuai ruang lingkup penelitiannya.
+- **Bersama:** review perubahan bersama, model data inti, integrasi pembayaran, role/access, dan antarmuka lintas modul.
 
-- **Aurellia:** karyawan, jadwal/absensi, sesi kas dan penutupan shift.
-- **Syafa:** produk/pemasok, pembelian/penerimaan, kartu stok, POS dan penjualan.
-- **Bersama:** sepakati kontrak integrasi penjualan–stok–kas sebelum kedua modul digabungkan.
+Setiap tugas dikerjakan di branch sendiri dan dikirim sebagai pull request. Jika kontrak data berubah, bahas sebelum implementasi.
 
-## Tahap 6 — Akuntansi dan laporan
+## Tahap 5 — Integrasi
 
-**Bersama, dengan Syafa mengoordinasikan laporan periode:** biaya, utang, penggajian sesuai kebutuhan yang disetujui, pemetaan akun, jurnal otomatis/manual, buku besar, neraca saldo, laba rugi, neraca, arus kas, dan laporan bulanan.
+**Bersama:** hubungkan ringkasan penjualan/pembayaran Syafa ke laporan kas Aurel, satukan data cabang/shift/kasir, tangani pembatalan/retur, dan pastikan rekap hariannya tersedia setelah shift malam selesai pukul 08.00.
 
-## Tahap 7 — Pemeriksaan alur dan penerimaan
+**Hasil:** satu alur dari transaksi pembayaran, tutup kas, sampai laporan yang dapat ditelusuri.
 
-**Bersama:** jalankan skenario dengan data sintetis dari login hingga laporan, rekonsiliasi stok dan kas, periksa hak akses, backup/restore, serta perbaiki temuan sebelum go-live.
+## Tahap 6 — Evaluasi dan perbaikan
 
-## Tahap 8 — Cutover dan operasional
+**Bersama:** siapkan skenario Black Box memakai equivalence partitioning dan boundary value analysis; bandingkan hitung kas sistem dengan perhitungan manual pada periode/cabang yang disetujui; kumpulkan SUS 10 item skala Likert 5 poin sesuai rancangan penelitian.
 
-**Bersama:** tentukan tanggal berhenti memakai IPOS, impor/arsip data yang dibutuhkan, masukkan saldo awal, hitung stok fisik, latih pengguna, siapkan backup, dan jalankan rekonsiliasi awal.
+Jika ada kesalahan kebutuhan atau rancangan, kembalikan temuan ke tahap terkait, perbaiki, lalu ulangi pemeriksaan pada alur yang terdampak. Simpan bukti hasil dan tindak lanjut untuk naskah.
 
-## Ritme kerja setiap perubahan
+## Tahap 7 — Persiapan operasional dan cutover
 
-1. Ambil satu tugas kecil yang memiliki kriteria selesai.
-2. Buat branch `feat/aurellia-<topik>`, `feat/syafa-<topik>`, atau `docs/<topik>` dari branch integrasi yang disepakati.
-3. Diskusikan dahulu jika mengubah model bersama atau alur lintas modul.
-4. Commit, buat pull request, minta tinjauan rekan, lalu gabungkan setelah disetujui.
-5. Jangan mulai dua implementasi pada file/model yang sama tanpa koordinasi.
+**Bersama pemilik/manajer:** inventarisasi data IPOS yang perlu diarsipkan atau dipindah, rekonsiliasi saldo awal, pelatihan, backup/restore, persiapan koneksi cabang, jadwal cutover, dan cara kembali ke proses aman jika penerapan gagal.
+
+Sistem menggantikan IPOS setelah kesiapan dan tanggal cutover disetujui. Jangan menjalankan dua sumber transaksi operasional tanpa prosedur rekonsiliasi.
+
+## Cara membagi kerja tiap minggu
+
+1. Pilih tugas kecil dengan hasil dan kriteria selesai.
+2. Tetapkan satu penanggung jawab utama dan satu peninjau.
+3. Beri tahu rekan sebelum mengubah file/model yang dipakai bersama.
+4. Buat branch tugas, commit, buka pull request, tinjau, lalu gabungkan.
+5. Catat keputusan bisnis/data baru di docs/DECISION_LOG.md.
