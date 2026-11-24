@@ -17,7 +17,7 @@
 | Peran pengguna | Pemilik, manajer, kasir, dan karyawan. |
 | Cakupan Aurellia | Absensi dan laporan kas per shift. |
 | Cakupan Syafa | POS/penjualan, persediaan, dan laporan berkala/bulanan sesuai pembagian penelitian. |
-| Sistem lama | Sistem baru direncanakan menggantikan IPOS setelah migrasi/arsip, rekonsiliasi, pelatihan, dan cutover. |
+| Penerapan | Jadwal dan kesiapan penerapan ditentukan setelah alur operasional disepakati. |
 | Versi fondasi lokal | Repo memulai prototipe dengan Django 6.1.3 dan Python 3.12; versi ini pilihan implementasi fondasi, bukan ketentuan versi eksplisit proposal. |
 
 Keputusan final ini menggantikan catatan kerja sebelumnya yang menetapkan SQLite, Anaconda, dan Google Colab. Sebelum produksi, pilih versi PostgreSQL yang cocok dengan versi Django. Dokumentasi Django 6.1 menyebut PostgreSQL 15+ dan Psycopg 3.1.12+.
@@ -37,7 +37,7 @@ Keputusan final ini menggantikan catatan kerja sebelumnya yang menetapkan SQLite
 - Rumus laporan, klasifikasi uang masuk/keluar, saldo kas seharusnya, selisih, pembayaran tunai/non-tunai, dan setoran.
 - Toleransi keterlambatan, izin, pembuktian absensi, radius lokasi, masa simpan selfie/lokasi, serta pihak yang dapat melihatnya.
 - Cabang “pusat” untuk pembandingan laporan kas selama tiga hari.
-- Hosting, domain, backup, pemulihan, koneksi antar cabang, tanggal cutover IPOS dan data yang perlu dibawa.
+- Hosting, domain, backup, pemulihan, koneksi antar cabang, tanggal penerapan dan data historis yang perlu dibawa bila diperlukan.
 - Akun awal, aturan hak akses, dan penanggung jawab persetujuan koreksi.
 
 ## Tindak lanjut komentar pembimbing pada outline

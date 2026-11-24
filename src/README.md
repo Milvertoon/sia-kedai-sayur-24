@@ -7,7 +7,7 @@ Fondasi ini memakai Django 6.1.3, Python 3.12, dan PostgreSQL mengikuti proposal
 1. Pasang Python 3.12, PostgreSQL 15 atau lebih baru, dan VS Code.
 2. Buka pgAdmin, lalu buat database lokal bernama sia_kedai_sayur.
 3. Buka terminal PowerShell di folder utama repo.
-4. Salin contoh konfigurasi dan buat virtual environment:
+4. Salin contoh konfigurasi [.env.example](../.env.example) menjadi .env, lalu buat virtual environment:
 
     copy .env.example .env
     python -m venv .venv
@@ -25,7 +25,7 @@ Fondasi ini memakai Django 6.1.3, Python 3.12, dan PostgreSQL mengikuti proposal
 
 ## Jika memakai Anaconda
 
-Di Anaconda Prompt yang terbuka pada folder utama repo, jalankan:
+Di Anaconda Prompt pada folder utama repo, buat environment dari [environment.yml](environment.yml), lalu jalankan:
 
     conda env create -f src/environment.yml
     conda activate sia-kedai-sayur

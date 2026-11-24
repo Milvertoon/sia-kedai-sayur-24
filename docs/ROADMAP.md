@@ -14,7 +14,7 @@ Urutan ini mengikuti proposal penelitian terbaru dan pembagian dua orang untuk s
 
 **Bersama:** wawancara/konfirmasi alur cabang, shift, absensi, penutupan kas, laporan harian, pengguna, bukti selfie/lokasi, dan pergantian kasir.
 
-**Hasil:** kebutuhan fungsional/nonfungsional, kriteria penerimaan, serta jawaban pertanyaan terbuka di docs/REQUIREMENTS.md. Selesaikan dahulu konflik laporan shift tengah dan kas saat shift tumpang tindih.
+**Hasil:** kebutuhan fungsional/nonfungsional, kriteria penerimaan, serta jawaban pertanyaan terbuka di [REQUIREMENTS.md](REQUIREMENTS.md). Selesaikan dahulu konflik laporan shift tengah dan kas saat shift tumpang tindih.
 
 ## Tahap 2 — Model proses dan rancangan
 
@@ -50,9 +50,9 @@ Jika ada kesalahan kebutuhan atau rancangan, kembalikan temuan ke tahap terkait,
 
 ## Tahap 7 — Persiapan operasional dan cutover
 
-**Bersama pemilik/manajer:** inventarisasi data IPOS yang perlu diarsipkan atau dipindah, rekonsiliasi saldo awal, pelatihan, backup/restore, persiapan koneksi cabang, jadwal cutover, dan cara kembali ke proses aman jika penerapan gagal.
+**Bersama pemilik/manajer:** inventarisasi data operasional historis yang perlu diarsipkan atau dipindah bila diperlukan, rekonsiliasi saldo awal, pelatihan, backup/restore, persiapan koneksi cabang, jadwal penerapan, dan cara kembali ke proses aman jika penerapan gagal.
 
-Sistem menggantikan IPOS setelah kesiapan dan tanggal cutover disetujui. Jangan menjalankan dua sumber transaksi operasional tanpa prosedur rekonsiliasi.
+Terapkan sistem setelah kesiapan dan jadwalnya disetujui. Hindari pencatatan ganda tanpa prosedur rekonsiliasi.
 
 ## Cara membagi kerja tiap minggu
 
@@ -60,4 +60,4 @@ Sistem menggantikan IPOS setelah kesiapan dan tanggal cutover disetujui. Jangan 
 2. Tetapkan satu penanggung jawab utama dan satu peninjau.
 3. Beri tahu rekan sebelum mengubah file/model yang dipakai bersama.
 4. Buat branch tugas, commit, buka pull request, tinjau, lalu gabungkan.
-5. Catat keputusan bisnis/data baru di docs/DECISION_LOG.md.
+5. Catat keputusan bisnis/data baru di [DECISION_LOG.md](DECISION_LOG.md).
