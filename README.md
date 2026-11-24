@@ -1,37 +1,42 @@
 # Sistem Informasi Akuntansi Kedai Sayur 24
 
-Repositori bersama Aurellia dan Syafa untuk merancang dan membangun sistem informasi akuntansi berbasis web. Sistem baru ditujukan untuk menggantikan IPOS setelah proses cutover dan kesiapan data disepakati.
+Repositori untuk membangun satu aplikasi web bagi Kedai Sayur 24 Semarang. Rancangan terbaru mengikuti proposal penelitian Aurellia: skripsinya berfokus pada subsistem absensi karyawan dan laporan kas per shift. Sistem keseluruhan juga akan terhubung dengan modul yang dikerjakan Syafa.
 
-## Keputusan yang sudah diberikan
+## Acuan rancangan terbaru
 
 - Platform: website.
-- Bahasa: Python.
-- Database: SQLite.
-- Tools yang direncanakan: Anaconda dan Google Colab.
-- Pemodelan: UML.
-- Jumlah karyawan: 30 orang.
-- Sistem baru akan menggantikan IPOS sebagai sistem operasional setelah go-live.
+- Bahasa: Python dengan Django.
+- Database: PostgreSQL.
+- Antarmuka: HTML, CSS, JavaScript, Bootstrap, dan Django Templates.
+- Perangkat kerja utama: VS Code.
+- Pemodelan: UML dan flowchart.
+- Pengguna: pemilik, manajer, kasir, dan karyawan.
+- Operasional: tiga cabang di Semarang, sekitar 30 karyawan, toko buka 24 jam, empat shift.
+- Sistem baru direncanakan menggantikan IPOS setelah data, proses, pelatihan, dan cutover siap.
 
-Framework Python, aturan shift, metode persediaan, dan rincian migrasi masih perlu dikunci. Lihat [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md).
+Proposal final menggantikan pilihan kerja lama yang menyebut SQLite, Anaconda, dan Google Colab. Prototipe repo sudah menggunakan Django; konfigurasinya sedang diselaraskan ke PostgreSQL.
 
-## Pembagian awal tim
+## Pembagian kerja
 
-- **Aurellia:** data karyawan, absensi, kas dan laporan per shift.
-- **Syafa:** persediaan, penjualan/POS baru, dan laporan periode/bulanan.
-- **Bersama:** kebutuhan lintas modul, UML, integrasi, akuntansi, review, dan persiapan cutover.
+- **Aurellia (Aurel):** data dan penempatan karyawan, absensi, serta laporan kas per shift. Modul laporan Aurel menerima data penjualan/pembayaran dari modul Syafa sesuai kontrak integrasi yang disepakati.
+- **Syafa:** persediaan, transaksi POS/penjualan, dan laporan keuangan per periode/bulanan sesuai pembagian penelitian.
+- **Bersama:** login dan hak akses, data cabang/shift, UML, aturan bisnis, kontrak integrasi, akuntansi bersama, peninjauan perubahan, dan integrasi sistem.
 
-## Status saat ini
+Pembagian ini menjelaskan kepemilikan kerja; produk tetap satu aplikasi dan satu repositori.
 
-Repo dan alur GitHub sudah disiapkan. Tahap yang sedang berjalan adalah menyepakati kebutuhan serta aturan bisnis sebelum membuat skema database dan fitur aplikasi.
+## Status repo
 
-## Dokumen kerja
+Branch lokal saat ini adalah feat/web-foundation. Isinya fondasi Django dan halaman awal, belum berisi fitur operasional atau transaksi. Perubahan berdasarkan proposal final disiapkan di branch lokal ini agar dapat ditinjau sebelum dikirim ke GitHub.
 
-- [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) — kebutuhan awal dan hal yang perlu dikonfirmasi.
-- [`docs/ROADMAP.md`](docs/ROADMAP.md) — tahapan pembangunan dan pembagian kerja.
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — modul dan alur data konseptual.
-- [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md) — keputusan terkonfirmasi dan terbuka.
-- [`docs/WORKFLOW.md`](docs/WORKFLOW.md) — branch, pull request, dan integrasi dua pengembang.
+## Dokumen proyek
 
-## Keamanan data
+- docs/REQUIREMENTS.md — kebutuhan dan batas penelitian.
+- docs/ARCHITECTURE.md — modul serta aliran data.
+- docs/DECISION_LOG.md — keputusan final dan hal yang masih harus dipastikan.
+- docs/ROADMAP.md — urutan pengerjaan dan pembagian dua orang.
+- docs/WORKFLOW.md — cara kerja Git dan pull request.
+- src/README.md — cara menyiapkan dan menjalankan fondasi lokal.
 
-Jangan commit kata sandi, token, database produksi, ekspor IPOS, atau data pribadi karyawan/pelanggan. Gunakan data sintetis. Rahasia lokal disimpan dalam `.env` yang tidak di-commit.
+## Data dan keamanan
+
+Gunakan data contoh sintetis. Jangan unggah kata sandi, token, database operasional, ekspor IPOS, foto selfie, lokasi, atau data pribadi karyawan. Jangan gunakan server pengembangan Django sebagai aplikasi toko.
